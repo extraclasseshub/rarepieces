@@ -9,18 +9,15 @@ const Footer = () => {
     <footer className="bg-brand-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center mb-6">
               <img 
-                src="/public/WhatsApp Image 2025-09-11 at 16.53.17_ba6a0cac.jpg" 
+                src="/logo.png" 
                 alt="Rare Pieces Logo"
-                className="h-12 w-12 object-contain"
+                className="h-14 w-auto object-contain"
               />
-              <div>
-                <div className="font-bold text-xl">RARE PIECES</div>
-                <div className="text-brand-light-blue text-sm font-medium">Credit Solutions</div>
-              </div>
             </div>
             <p className="text-gray-300 mb-4">
               Professional credit repair services in South Africa. Fix your credit, secure your future.
@@ -72,10 +69,11 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Bottom Section */}
         <div className="border-t border-gray-700 pt-8 mt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-gray-400 text-sm">
-              &copy; 2024 Rare Pieces Credit Solutions. All rights reserved.
+              &copy; {new Date().getFullYear()} Rare Pieces Credit Solutions. All rights reserved.
             </p>
             <div className="flex space-x-4">
               <a
