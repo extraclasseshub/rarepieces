@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-6">
               <img 
-                src="/logo.png" 
+                src="/rare.png" 
                 alt="Rare Pieces Logo"
                 className="h-14 w-auto object-contain"
               />
