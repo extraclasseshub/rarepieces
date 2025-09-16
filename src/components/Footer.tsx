@@ -1,88 +1,80 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { MessageCircle, Mail, MapPin, Phone, Send } from 'lucide-react';
 
 const Footer = () => {
   const whatsappMessage = "Hi Rare Pieces, I'd like to enquire about your credit repair services.";
   const whatsappUrl = `https://wa.me/27784306215?text=${encodeURIComponent(whatsappMessage)}`;
 
-  useEffect(() => {
-    // Load MailerLite popup script
-    const script = document.createElement('script');
-    script.src = "https://assets.mailerlite.com/js/universal.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    // Initialize your account (replace '1799679' with your MailerLite account ID)
-    script.onload = () => {
-      (window as any).ml('account', '1799679');
-    };
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <footer className="bg-brand-navy text-white">
       {/* Newsletter Section */}
       <div className="bg-brand-dark-blue py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Stay Updated on Credit Repair Tips
-          </h3>
-          <p className="text-brand-light-blue mb-8 max-w-2xl mx-auto">
-            Subscribe to our newsletter for expert credit repair advice, industry updates, 
-            and exclusive tips to improve your financial health.
-          </p>
-
-          {/* Mailchimp Form */}
-          <div className="max-w-md mx-auto mb-6">
-            <form 
-              action="https://rarepieces.us22.list-manage.com/subscribe/post?u=67405654fa0e67bf8999d1191&amp;id=07e94357fd" 
-              method="post" 
-              target="_blank"
-              className="flex flex-col sm:flex-row gap-3"
-            >
-              <input 
-                type="email" 
-                name="EMAIL" 
-                placeholder="Enter your email address"
-                required
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-light-blue"
-              />
-              <button
-                type="submit"
-                className="flex items-center justify-center space-x-2 bg-brand-light-blue hover:bg-white text-brand-navy px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
-              >
-                <Send size={18} />
-                <span>Subscribe</span>
-              </button>
-            </form>
-          </div>
-
-          {/* MailerLite Popup Button */}
-          <div className="max-w-md mx-auto">
-            <button
-              className="flex items-center justify-center space-x-2 bg-brand-light-blue hover:bg-white text-brand-navy px-8 py-4 rounded-lg font-semibold transition-colors duration-300 mx-auto"
-              onClick={() => (window as any).ml('show', 'V0hXuF', true)} // replace 'V0hXuF' with your form ID
-            >
-              <Send size={18} />
-              <span>Subscribe to Newsletter</span>
-            </button>
-            <p className="text-sm text-brand-light-blue mt-4">
-              We respect your privacy. Unsubscribe at any time.
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Stay Updated on Credit Repair Tips
+            </h3>
+            <p className="text-brand-light-blue mb-8 max-w-2xl mx-auto">
+              Subscribe to our newsletter for expert credit repair advice, industry updates, 
+              and exclusive tips to improve your financial health.
             </p>
+            
+            {/* Newsletter Form */}
+            <div className="max-w-md mx-auto">
+              <div id="mc_embed_signup">
+                <form 
+                  action="https://rarepieces.us22.list-manage.com/subscribe/post?u=67405654fa0e67bf8999d1191&amp;id=07e94357fd" 
+                  method="post" 
+                  id="mc-embedded-subscribe-form" 
+                  name="mc-embedded-subscribe-form" 
+                  className="validate flex flex-col sm:flex-row gap-3"
+                  target="_blank" 
+                  noValidate
+                >
+                  <div id="mc_embed_signup_scroll" className="flex-1">
+                    <input 
+                      type="email" 
+                      name="EMAIL" 
+                      id="mce-EMAIL" 
+                      placeholder="Enter your email address"
+                      required
+                      className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-light-blue"
+                    />
+                    <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
+                      <input type="text" name="b_67405654fa0e67bf8999d1191_07e94357fd" tabIndex={-1} defaultValue="" />
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    className="flex items-center justify-center space-x-2 bg-brand-light-blue hover:bg-white text-brand-navy px-6 py-3 rounded-lg font-semibold transition-colors duration-300 whitespace-nowrap"
+                  >
+                    <Send size={18} />
+                    <span>Subscribe</span>
+                  </button>
+                </form>
+              </div>
+              
+              <p className="text-sm text-brand-light-blue mt-4">
+                We respect your privacy. Unsubscribe at any time.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Footer Info */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
-              <img src="/rare.png" alt="Rare Pieces Logo" className="h-14 w-auto object-contain" />
+              <img 
+                src="/rare.png" 
+                alt="Rare Pieces Logo"
+                className="h-14 w-auto object-contain"
+              />
             </div>
             <p className="text-gray-300 mb-4">
               Professional credit repair services in South Africa. Fix your credit, secure your future.
@@ -98,11 +90,15 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-brand-light-blue" />
-                <a href="tel:+27784306215" className="hover:text-brand-light-blue transition-colors">+27 78 430 6215</a>
+                <a href="tel:+27784306215" className="hover:text-brand-light-blue transition-colors">
+                  +27 78 430 6215
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-brand-light-blue" />
-                <a href="mailto:info@rarepieces.co.za" className="hover:text-brand-light-blue transition-colors">info@rarepieces.co.za</a>
+                <a href="mailto:info@rarepieces.co.za" className="hover:text-brand-light-blue transition-colors">
+                  info@rarepieces.co.za
+                </a>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin size={18} className="text-brand-light-blue mt-1" />
@@ -133,13 +129,23 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-gray-700 pt-8 mt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <p className="text-gray-400 text-sm">&copy; {new Date().getFullYear()} Rare Pieces Credit Solutions. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">
+              &copy; {new Date().getFullYear()} Rare Pieces Credit Solutions. All rights reserved.
+            </p>
             <div className="flex space-x-4">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300"
+              >
                 <MessageCircle size={16} />
                 <span>WhatsApp</span>
               </a>
-              <a href="mailto:info@rarepieces.co.za?subject=Credit Repair Enquiry" className="flex items-center space-x-2 bg-brand-blue hover:bg-brand-light-blue text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300">
+              <a
+                href="mailto:info@rarepieces.co.za?subject=Credit Repair Enquiry"
+                className="flex items-center space-x-2 bg-brand-blue hover:bg-brand-light-blue text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300"
+              >
                 <Mail size={16} />
                 <span>Email</span>
               </a>
