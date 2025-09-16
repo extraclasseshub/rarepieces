@@ -21,40 +21,7 @@ const Footer = () => {
             
             {/* Newsletter Form */}
             <div className="max-w-md mx-auto">
-              <div id="mc_embed_signup">
-                <form 
-                  action="https://rarepieces.us22.list-manage.com/subscribe/post?u=67405654fa0e67bf8999d1191&amp;id=07e94357fd" 
-                  method="post" 
-                  id="mc-embedded-subscribe-form" 
-                  name="mc-embedded-subscribe-form" 
-                  className="validate flex flex-col sm:flex-row gap-3"
-                  target="_blank" 
-                  noValidate
-                >
-                  <div id="mc_embed_signup_scroll" className="flex-1">
-                    <input 
-                      type="email" 
-                      name="EMAIL" 
-                      id="mce-EMAIL" 
-                      placeholder="Enter your email address"
-                      required
-                      className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-light-blue"
-                    />
-                    <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
-                      <input type="text" name="b_67405654fa0e67bf8999d1191_07e94357fd" tabIndex={-1} defaultValue="" />
-                    </div>
-                  </div>
-                  <button
-                    type="submit"
-                    name="subscribe"
-                    id="mc-embedded-subscribe"
-                    className="flex items-center justify-center space-x-2 bg-brand-light-blue hover:bg-white text-brand-navy px-6 py-3 rounded-lg font-semibold transition-colors duration-300 whitespace-nowrap"
-                  >
-                    <Send size={18} />
-                    <span>Subscribe</span>
-                  </button>
-                </form>
-              </div>
+              <div className="ml-embedded" data-form="yCZgt2"></div>
               
               <p className="text-sm text-brand-light-blue mt-4">
                 We respect your privacy. Unsubscribe at any time.
