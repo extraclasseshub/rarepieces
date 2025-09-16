@@ -52,9 +52,15 @@ const Footer = () => {
                   >
                     <Send size={18} />
                     <span>Subscribe</span>
-                  </button>
-                </form>
-              </div>
+            {/* Newsletter Popup Button */}
+            <div className="max-w-md mx-auto">
+              <button 
+                className="ml-onclick-form flex items-center justify-center space-x-2 bg-brand-light-blue hover:bg-white text-brand-navy px-8 py-4 rounded-lg font-semibold transition-colors duration-300 mx-auto"
+                onClick={() => (window as any).ml('show', 'V0hXuF', true)}
+              >
+                <Send size={18} />
+                <span>Subscribe to Newsletter</span>
+              </button>
               
               <p className="text-sm text-brand-light-blue mt-4">
                 We respect your privacy. Unsubscribe at any time.
