@@ -1,17 +1,24 @@
 import React, { useEffect } from 'react';
 import { MessageCircle, Mail, MapPin, Phone, Send } from 'lucide-react';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const whatsappMessage = "Hi Rare Pieces, I'd like to enquire about your credit repair services.";
   const whatsappUrl = `https://wa.me/27784306215?text=${encodeURIComponent(whatsappMessage)}`;
 
   useEffect(() => {
-    // Dynamically load the MailerLite embed script
+    // Load MailerLite script
     const script = document.createElement('script');
-    script.src = "https://assets.mailerlite.com/js/universal.js"; // MailerLite universal embed script
+    script.src = "https://assets.mailerlite.com/js/universal.js";
     script.async = true;
     document.body.appendChild(script);
-    
+
+    script.onload = () => {
+      // Initialize MailerLite form after script loads
+      if ((window as any).ML && (window as any).ML.start) {
+        (window as any).ML.start();
+      }
+    };
+
     return () => {
       document.body.removeChild(script);
     };
@@ -32,7 +39,6 @@ const Footer = () => {
           
           {/* MailerLite Embedded Form */}
           <div
-            id="mlb2-1799679"
             className="max-w-md mx-auto"
             dangerouslySetInnerHTML={{
               __html: `
